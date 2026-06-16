@@ -97,7 +97,6 @@ pick_min_node_size_oob_cpp <- function(target_mat, Z_pre,
                                        seed = NULL,
                                        mtry = NULL,
                                        min_bucket = 1L) {
-  .check_cpp_cit_loaded_min()
   
   target_mat <- matrix2_double(target_mat)
   Z_pre <- matrix2_double(Z_pre)
