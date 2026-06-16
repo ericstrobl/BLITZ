@@ -1,6 +1,6 @@
 # BLITZ
 
-BLITZ (Broad-to-Local Independence Testing via Residualization) is a fast nonparametric conditional independence test for causal discovery. It uses two-stage residualization: a low-order polynomial regression first removes broad smooth dependence on the conditioning set, and shallow tree regressions then remove remaining nonlinear conditional structure from compact transformed residual features. Conditional independence is tested using the residual cross-covariance statistic with a moment-matched chi-square null approximation.
+BLITZ (Broad-to-Local Independence Testing via residualiZation) is a fast nonparametric conditional independence test for causal discovery. It uses two-stage residualization: a low-order polynomial regression first removes broad smooth dependence on the conditioning set, and shallow tree regressions then remove remaining nonlinear conditional structure from compact transformed residual features. Conditional independence is tested using the residual cross-covariance statistic with a moment-matched chi-square null approximation.
 
 BLITZ is designed for repeated scalar conditional independence queries of the form X ⫫ Y | Z, as required by constraint-based causal discovery algorithms such as PC, FCI, and RFCI.
 
