@@ -2,7 +2,7 @@ Package: BLITZ
 Type: Package
 Title: Broad-to-Local Independence Testing via Residualization
 Version: 0.1.0
-Authors@R: person("Eric V.", "Strobl", email = "eric.strobl@pitt.edu", role = c("aut", "cre"))
+Authors@R: person("Eric V.", "Strobl", email = "ericvonstrobl@gmail.com", role = c("aut", "cre"))
 Description: Implements BLITZ, a fast nonparametric conditional independence test for causal discovery. BLITZ uses two-stage residualization: low-order polynomial regression removes broad smooth dependence on the conditioning set, and shallow tree regressions remove remaining nonlinear conditional structure before testing residual cross-covariance.
 License: CC BY-NC 4.0
 Encoding: UTF-8
