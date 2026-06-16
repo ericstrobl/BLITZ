@@ -8,30 +8,6 @@ matrix2_double <- function(a) {
   a
 }
 
-.check_cpp_cit_loaded_min <- function() {
-  needed <- c(
-    "cpp_poly_residualize_matrix",
-    "cpp_cit_oob_score_min_node_matrix",
-    "cpp_cit_residualize_matrix_one"
-  )
-  
-  missing <- needed[!vapply(
-    needed,
-    exists,
-    logical(1L),
-    mode = "function",
-    inherits = TRUE
-  )]
-  
-  if (length(missing) > 0L) {
-    stop(
-      "Missing C++ functions: ",
-      paste(missing, collapse = ", "),
-      ". Run the corrected Rcpp::sourceCpp(...) block first."
-    )
-  }
-}
-
 fast_col_sds <- function(a) {
   a <- matrix2_double(a)
   
