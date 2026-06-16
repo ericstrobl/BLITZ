@@ -95,7 +95,6 @@ pick_min_node_size_oob_cpp <- function(target_mat, Z_pre,
                                        maxdepth = 100,
                                        subsample = 1,
                                        seed = NULL,
-                                       tune_cols = NULL,
                                        mtry = NULL,
                                        min_bucket = 1L) {
   .check_cpp_cit_loaded_min()
@@ -110,22 +109,9 @@ pick_min_node_size_oob_cpp <- function(target_mat, Z_pre,
     stop("No valid min_node_size candidates.")
   }
   
-  if (!is.null(tune_cols)) {
-    tune_cols <- as.integer(tune_cols)
-    tune_cols <- tune_cols[tune_cols >= 1L & tune_cols <= ncol(target_mat)]
-    
-    if (length(tune_cols) == 0L) {
-      stop("No valid tune_cols.")
-    }
-    
-    target_for_tuning <- target_mat[, tune_cols, drop = FALSE]
-  } else {
-    target_for_tuning <- target_mat
-  }
-  
   score_mat <- cpp_cit_oob_score_min_node_matrix(
     X = Z_pre,
-    Y = target_for_tuning,
+    Y = target_mat,
     min_node_candidates = min_node_candidates,
     learning_rate = learning_rate,
     subsample = subsample,
